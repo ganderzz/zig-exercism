@@ -1,0 +1,4 @@
+*.exe
+zig-cache
+main.lib
+main.pdb
