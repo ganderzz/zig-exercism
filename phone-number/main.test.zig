@@ -1,6 +1,6 @@
 const assert = @import("std").debug.assert;
 const mem = @import("std").mem;
-const main = @import("./main.zig");
+const main = @import("./example.zig");
 
 const clean = main.clean;
 const PhoneError = main.PhoneError;

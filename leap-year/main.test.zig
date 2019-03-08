@@ -1,5 +1,5 @@
 const assert = @import("std").debug.assert;
-const isLeapYear = @import("./main.zig").isLeapYear;
+const isLeapYear = @import("./example.zig").isLeapYear;
 
 test "Year divisble by 4, and not divisible by 100 it is a leap year" {
     assert(isLeapYear(1996));
