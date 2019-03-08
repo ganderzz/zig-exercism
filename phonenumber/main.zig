@@ -1,6 +1,7 @@
 pub const PhoneError = error {
     UnderLength,
     MissingStartingOne,
+    TooBig,
 };
 
 pub fn clean(input: []const u8) ![]const u8 {
@@ -20,7 +21,7 @@ pub fn clean(input: []const u8) ![]const u8 {
         position += 1;
 
         if (position > buffer.len) {
-            break;
+            return PhoneError.TooBig;
         }
     }
 
