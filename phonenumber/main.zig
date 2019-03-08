@@ -1,13 +1,14 @@
 const warn = @import("std").debug.warn;
 const math = @import("std").math;
+const mem = @import("std").mem;
 
 const PhoneError = error {
     UnderLength,
     MissingStartingOne,
 };
 
-pub fn clean(input: []const u8) ![10]u8 {
-    var output: [10]u8 = undefined;
+pub fn clean(input: []const u8) ![]const u8 {
+    var output = []u8{0} ** 14;
     var position: u8 = 0;
 
     if (input.len < 10) {
@@ -27,5 +28,5 @@ pub fn clean(input: []const u8) ![10]u8 {
         }
     }
 
-    return output;
+    return @bytesToSlice(u8, output[0..position]);
 }
